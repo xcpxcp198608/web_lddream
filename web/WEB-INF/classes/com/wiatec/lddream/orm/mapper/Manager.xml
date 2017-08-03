@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wiatec.lddream.orm.dao.ManagerDao">
+    <resultMap type="com.wiatec.lddream.orm.pojo.ManagerInfo" id="managerInfo">
+        <id column="id" property="id"/>
+        <result column="userName" property="userName"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+
+    <select id="countOne" resultType="int" parameterType="com.wiatec.lddream.orm.pojo.ManagerInfo">
+        SELECT COUNT(*) FROM manager WHERE userName = #{userName} AND password = #{password}
+    </select>
+
+
+</mapper>
